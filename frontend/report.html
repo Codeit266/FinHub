@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transaction Report</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="brand-header">
+        <a href="index.html" class="brand-header-content">
+            <img src="sait img.png" alt="SAIT Logo">
+            <h1>FinHub</h1>
+        </a>
+    </div>
+ 
+    
+    <button class="menu-toggle" onclick="toggleMenu()" >
+      ☰  
+    </button>
+
+  
+  <div class="sidebar" id="sidebar">
+      <ul class="menu">
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="events.html"><i class="fas fa-calendar-alt"></i> Event Handling & Budgeting</a></li>
+        <li><a href="pieChart.html"><i class="fas fa-chart-bar"></i>Pie Chart</a></li>
+        <li><a href="CSV.html"><i class="fas fa-cog"></i> Export to CSV</a></li>
+        <li><a href="pdf.html"><i class="fas fa-cog"></i> Export to PDF</a></li>
+        <li><a href="report.html"><i class="fas fa-cog"></i> Download Report</a></li>
+        <li> <button onclick="logout()" id="log-btn">Logout</button> </li>
+      </ul>
+  </div>
+
+  <div class="main-wrapper">
+      <div class="container glass-card" style="text-align: center; max-width: 600px; margin: 4rem auto; padding: 3rem 2rem;">
+        <h2>Download Transaction Report</h2>
+        <p style="margin-bottom: 2rem; color: var(--text-muted);">Select the period for the report:</p>
+        
+        <div class="button-group">
+          <button id="monthly-btn" onclick="downloadReport('monthly')">Download Monthly Report</button>
+          <button id="yearly-btn" onclick="downloadReport('yearly')">Download Yearly Report</button>
+        </div>
+
+        <div id="loading" class="loading" style="display: none;">
+          <p>Generating report... Please wait.</p>
+        </div>
+      </div>
+  </div>
+
+  <div class="background-container">
+    <div class="gradient-ball ball1"></div>
+    <div class="gradient-ball ball2"></div>
+    <div class="gradient-ball ball3"></div>
+  </div>
+
+  <script src="report.js"></script>
+</body>
+</html>
